@@ -1,5 +1,6 @@
 /* Imports */
 import { signIn, signUp, getPosts } from './fetch-utils.js';
+import { renderPost } from './render-utils.js';
 
 /* Get DOM Elements */
 const loginButtonEl = document.querySelector('.login-button');
@@ -15,22 +16,17 @@ window.addEventListener('load', async () => {
     postsData = posts;
     // call my display function here when its done
     postListEl.textContent = '';
-
-    for (let post of postsData) {
-        const postEl = document.createElement('div');
-        const titleEl = document.createElement('p');
-        const messageEL = document.createElement('p');
-
-        titleEl.textContent = post.post_title;
-        messageEL.textContent = post.message;
-
-        postEl.append(messageEL, titleEl);
-
-        postListEl.append(postEl);
-
-    }
+    displayPosts();
 });
 
 /* Display Functions */
+function displayPosts() {
+    for (let post of postsData) {
+
+        const postEl = renderPost(post);
+        postListEl.append(postEl);
+
+    }
+}
 
 // (don't forget to call any display functions you want to run on page load!)
