@@ -19,6 +19,12 @@ window.addEventListener('load', async () => {
     displayPosts();
 });
 
+
+
+createButtonEl.addEventListener('click', () => {
+    location.replace('./create');
+});
+
 /* Display Functions */
 function displayPosts() {
     for (let post of postsData) {
