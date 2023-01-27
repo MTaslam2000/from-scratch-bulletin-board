@@ -1,5 +1,5 @@
 /* Imports */
-import { signIn, signUp, getPosts } from './fetch-utils.js';
+import { signIn, signUp, getPosts, getUser } from './fetch-utils.js';
 import { renderPost } from './render-utils.js';
 
 /* Get DOM Elements */
@@ -19,7 +19,13 @@ window.addEventListener('load', async () => {
     displayPosts();
 });
 
-
+loginButtonEl.addEventListener('click', () => {
+    if (getUser()) {
+        loginButtonEl.textContent = 'log i n';
+    } else {
+        location.replace('./auth');
+    }
+});
 
 createButtonEl.addEventListener('click', () => {
     location.replace('./create');

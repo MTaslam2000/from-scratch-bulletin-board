@@ -4,6 +4,34 @@ const SUPABASE_KEY =
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+export function getUser() {
+    return client.auth.session() && client.auth.session().user;
+}
+
+export async function checkAuth() {
+    const user = await getUser();
+
+    if (!user) location.replace('../');
+}
+
+export async function checkAuthCreate() {
+    if (!getUser()) {
+        location.replace('../auth');
+    }
+}
+
+export async function redirectIfLoggedIn() {
+    if (await getUser()) {
+        location.replace('./create');
+    }
+}
+
+export async function logout() {
+    await client.auth.signOut();
+
+    return (window.location.href = '../');
+}
+
 export async function signIn(email, password) {
     const { data, error } = await client.auth.signIn({
         email: email,
