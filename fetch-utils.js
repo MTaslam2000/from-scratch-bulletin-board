@@ -20,7 +20,7 @@ export async function signUp(email, password) {
 
 export async function getPosts() {
     const { data, error } = await client
-        .from('board')
+        .from('posts')
         .select('*');
     return data;
 }
