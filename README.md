@@ -25,3 +25,26 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+[!wireframe](./assets/wireframe.png);
+
+## HTML setup
+
+-   login button
+-   create button
+
+## Events
+
+-   on load, check if user is logged in. if so redirect to home page
+-   on click, login button should take user to auth page
+-   on click, create button should take user to create page
+    -   If not logged in the user will be redirected to the auth page to log in
+
+## vertical slices
+
+-   on load, post should be visible
+-   user should be able to go to auth page and sign in/sing up
+-   logout button should be visible if the user is logged in
+-   the user should not be able to go to the auth page if signed in
+-   once logged in the user should be able go to create page and create a post and
+    when the post is submitted they will be redirected to the home page and their post should be visible.
