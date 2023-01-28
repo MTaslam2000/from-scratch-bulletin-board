@@ -52,3 +52,9 @@ export async function getPosts() {
         .select('*');
     return data;
 }
+
+export async function addPost(booger) {
+    const { data, error } = await client
+        .from('posts')
+        .insert({ post_title: booger.title, message: booger.message });
+}
