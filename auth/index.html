@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- title and favicon -->
+    <title>Web App</title>
+    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
+
+    <!-- js -->
+    <script type="module" src="auth.js"></script>
+
+    <!-- fonts -->
+    <!-- see https://fonts.google.com/ -->
+
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <!-- add link for page specific css -->
+
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="../assets/html_css_js.png" alt="logo">
+        <h1>Please Log In to continue</h1>
+    </header>
+
+    <main class="main">
+            <div class="auth-container-sign-in">
+                <form id="sign-in">
+                    <h3>Sign In</h3>
+                    <label>Email </label><input type="email" name="email" class="sign-in-email" />
+                    <label>Password </label
+                    ><input type="password" name="password" class="sign-in-password" />
+                    <button>Submit</button>
+                </form>
+            </div>
+            <div class="auth-container-sign-up">
+                <form class="sign-up">
+                    <h3>Sign Up</h3>
+                    <label>Email </label><input type="email" name="email" class="sign-up-email" />
+                    <label>Password </label
+                    ><input type="password" name="password" class="sign-up-password" />
+                    <button>Submit</button>
+                    <h1><a href="../">Go back to Home Page</a></h1>
+                </form>
+            </div>
+    </main>
+
+</body>
+
+</html>

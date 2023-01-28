@@ -14,36 +14,32 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
 
     <!-- js -->
-    <script type="module" src="app.js"></script>
+    <script type="module" src="create.js"></script>
 
     <!-- fonts -->
     <!-- see https://fonts.google.com/ -->
 
     <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
     <!-- add link for page specific css -->
 
 </head>
 
 <body>
     <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Home Page</h1>
+        <img class="logo" src="../assets/html_css_js.png" alt="logo">
+        <h1>This is your Create page</h1>
     </header>
 
     <main class="main">
-        <div class="post-container">
-
-        </div>
-        <div>
-            <button class="login-button">Login</button>
-        </div>
-
-        <div>
-            <button class="create-button">Create</button>
-        </div>
-
+        <form class="new-post-form">
+            <button>submit</button>
+            <input name="title" placeholder="title">
+            <input name="message" placeholder="message">
+        </form>
+        <h1><a href="../">Go back to Home Page</a></h1>
+        
     </main>
 
 </body>
