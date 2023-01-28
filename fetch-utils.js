@@ -53,8 +53,9 @@ export async function getPosts() {
     return data;
 }
 
-export async function addPost(booger) {
-    const { data, error } = await client
+export async function addPost(title, message) {
+    await client
         .from('posts')
-        .insert({ post_title: booger.title, message: booger.message });
+        .insert([{ post_title: title, message: message }]);
+
 }
