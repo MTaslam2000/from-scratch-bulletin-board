@@ -1,5 +1,5 @@
 /* Imports */
-import { signIn, signUp, getPosts, getUser } from './fetch-utils.js';
+import { signIn, signUp, getPosts, getUser, logout } from './fetch-utils.js';
 import { renderPost } from './render-utils.js';
 
 /* Get DOM Elements */
@@ -16,11 +16,15 @@ window.addEventListener('load', async () => {
     postsData = posts;
     // call my display function here when its done
     postListEl.textContent = '';
+    if (getUser()) {
+        loginButtonEl.textContent = 'log out';
+    }
     displayPosts();
 });
 
-loginButtonEl.addEventListener('click', () => {
+loginButtonEl.addEventListener('click', async () => {
     if (getUser()) {
+        await logout();
         loginButtonEl.textContent = 'login';
     } else {
         location.replace('./auth');
