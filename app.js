@@ -21,7 +21,7 @@ window.addEventListener('load', async () => {
 
 loginButtonEl.addEventListener('click', () => {
     if (getUser()) {
-        loginButtonEl.textContent = 'log i n';
+        loginButtonEl.textContent = 'login';
     } else {
         location.replace('./auth');
     }

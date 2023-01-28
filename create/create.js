@@ -1,10 +1,11 @@
 import { addPost } from '../fetch-utils.js';
 
-const newPostEL = document.querySelector('.new-post-form');
+const newPostEl = document.querySelector('.new-post-form');
+const homeButtonEl = document.querySelector('.home-button');
 
-newPostEL.addEventListener('submit', async (e) => {
+newPostEl.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const formData = new FormData(newPostEL);
+    const formData = new FormData(newPostEl);
 
     await addPost(formData.get('title'), formData.get('message'));
 });
